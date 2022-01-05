@@ -5,6 +5,7 @@ import Preload from '../screens/Preload'; //importando as telas
 import SignIn from '../screens/SignIn';
 import SignUp from '../screens/SignUp';
 import MainTab from '../stacks/MainTab';
+import Barber from '../screens/Barber';
 
 const Stack = createStackNavigator();
 
@@ -20,5 +21,6 @@ export default () => (
         <Stack.Screen name="SignIn" component={SignIn} />{/* tela de login */}
         <Stack.Screen name="SignUp" component={SignUp} />{/* tela de cadastro */}
         <Stack.Screen name="MainTab" component={MainTab} />{/* tela de MainTab */}
+        <Stack.Screen name="Barber" component={Barber} />{/* tela de Barber */}
     </Stack.Navigator>
 );

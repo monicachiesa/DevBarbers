@@ -42,14 +42,29 @@ export default {
         const json = await req.json();
         return json;
     },
-    getBarbers: async (lat=null, lng=null, address=null) => {
+    getBarbers: async (lat = null, lng = null, address = null) => {
         const token = await AsyncStorage.getItem('token');
 
         const req = await fetch(`${BASE_API}/barbers?token=${token}&lat=${lat}&lng=${lng}&address=${address}`);
         const json = await req.json();
         return json;
+    },
 
-        }
+    logout: async () => { //faz logout
+        const token = await AsyncStorage.getItem('token');
+
+        const req = await fetch(`${BASE_API}/auth/logout`, {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body:
+                JSON.stringify({ token })
+        });
+        const json = await req.json();
+        return json;
+    },
 
 
 };

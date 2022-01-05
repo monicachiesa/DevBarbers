@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components/native';
+import { useNavigation } from '@react-navigation/native';
 
 import Stars from './Stars';
 
@@ -38,18 +39,33 @@ border-radius: 10px;
 justify-content: center;
 align-items: center;
 `;
+
 const SeeProfileButtonText = styled.Text`
 font-size: 13px;
 color: #268596;
 `;
 
+const handleClick = () => {
+navigation.navigate('Barber', {  //envia as infos do barbeiro e navega até a tela de detalhes dele
+    id: data.id,
+    avatar: data.avatar,
+    name: data.name,
+    stars: data.stars
+});
+
+}
+
 export default ({ data }) => {
+
+    const navigation = useNavigation();
+
     return (
-        <Area>
+        <Area onPress={handleClick}>  
             <Avatar source={{ uri: data.avatar }} />
             <InfoArea>
                 <UserName>{data.name}</UserName>
                 <Stars stars={data.stars} showNumber={true} />
+
                 <SeeProfileButton>
                     <SeeProfileButtonText>Ver Perfil</SeeProfileButtonText>
                 </SeeProfileButton>
