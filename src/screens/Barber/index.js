@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react'
+import Stars from '../../components/Stars'
+import FavoriteIcon from '../../assets/favorite.svg';
+
 import {
     Container,
     Scroller,
@@ -10,7 +13,11 @@ import {
     SwipeDot,
     SwipeDotActive,
     SwipeItem,
-    SwipeImage
+    SwipeImage,
+    UserAvatar,
+    UserInfo,
+    UserInfoName,
+    UserFavButton
 
 } from './styles'
 import { Text } from 'react-native'
@@ -68,7 +75,14 @@ export default () => {
                 }
                 <PageBody>
                     <UserInfoArea>
-
+                  <UserAvatar source={{ uri: userInfo.avatar }} />
+                  <UserInfo>
+                      <UserInfoName>{userInfo.name}</UserInfoName>
+                      <Stars stars={userInfo.Stars} showNumber={true}/>
+                  </UserInfo>
+                  <UserFavButton>
+                      <FavoriteIcon width="24" height="24" fill = "#FF000"/>
+                  </UserFavButton>
                     </UserInfoArea>
                     <ServiceArea>
 
