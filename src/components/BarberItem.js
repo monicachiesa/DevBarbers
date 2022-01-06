@@ -45,19 +45,21 @@ font-size: 13px;
 color: #268596;
 `;
 
-const handleClick = () => {
-navigation.navigate('Barber', {  //envia as infos do barbeiro e navega até a tela de detalhes dele
-    id: data.id,
-    avatar: data.avatar,
-    name: data.name,
-    stars: data.stars
-});
 
-}
 
 export default ({ data }) => {
 
     const navigation = useNavigation();
+
+    const handleClick = () => {
+        navigation.navigate('Barber', {  //envia as infos do barbeiro e navega até a tela de detalhes dele
+            id: data.id,
+            avatar: data.avatar,
+            name: data.name,
+            stars: data.stars
+        });
+        
+        }
 
     return (
         <Area onPress={handleClick}>  
