@@ -63,9 +63,11 @@ export default () => {
       setLoading(true);
 
       let json = await Api.getBarber(userInfo.id); //envia o id do barbeiro para pegar as infos dele
-      if (json.error == "") {
+      if (json.error == '') {
         setUserInfo(json.data); //preenche as infos do barbeiro
         setFavorited(json.data.favorited); //vê se é favorito ou não
+
+// console.log(json.data.available) imprime um array com datas e horários disponíveis na data 
       } else {
         alert("Json error: " + json.error);
       }
@@ -132,7 +134,7 @@ export default () => {
                 <ServiceItem key={key}>
                   <ServiceInfo>
                     <ServiceName>{item.name}</ServiceName>
-                    <ServicePrice>R$ {item.price}</ServicePrice>
+                    <ServicePrice>R$ {item.price.toFixed(2)}</ServicePrice>
                   </ServiceInfo>
                   <ServiceChooseButton onPress={() => handleServiceChoose(key)}>
                     <ServiceChooseBtnText>Agendar</ServiceChooseBtnText>
