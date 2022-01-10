@@ -116,7 +116,7 @@ flex: 1;
 `;
 
 export const ServiceName  = styled.Text`
-font-size: 16;
+font-size: 16px;
 font-weight: bold;
 color: #268596;
 `;
@@ -139,7 +139,6 @@ font-size: 14px;
 font-weight: bold;
 color: #FFF;
 `;
-
 
 export const TestimonialArea = styled.View`
 margin-top: 30px;

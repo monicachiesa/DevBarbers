@@ -67,7 +67,6 @@ export default () => {
         setUserInfo(json.data); //preenche as infos do barbeiro
         setFavorited(json.data.favorited); //vê se é favorito ou não
 
-// console.log(json.data.available) imprime um array com datas e horários disponíveis na data 
       } else {
         alert("Json error: " + json.error);
       }
