@@ -28,7 +28,7 @@ export default ({ show, setShow, user, service }) => {
 const navigation = useNavigation();
 
   const handleCloseButton = () => {
-    setShow(false);
+    setShowModal(false);
   };
 
   return (
