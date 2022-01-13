@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
+import EscPos from "@leesiongchan/react-native-esc-pos";
 
-//import Geolocation from '@react-native-community/geolocation'
 import * as Location from 'expo-location'
-import { Platform, RefreshControl } from 'react-native'
+import { Platform, RefreshControl, Button, Text } from 'react-native'
 import Api from '../../Api'
 
 
@@ -21,7 +21,6 @@ import {
     ListArea
 } from './styles'
 
-import { Text } from 'react-native'
 import SearchIcon from '../../assets/search.svg'
 import MyLocationIcon from '../../assets/my_location.svg'
 import { useNavigation } from '@react-navigation/native'
@@ -104,11 +103,15 @@ export default () => {
         getBarbers();
     }
 
-const handleLocationSearch = () => {
-    setCoords({});
-    getBarbers();
+    const handleLocationSearch = () => {
+        setCoords({});
+        getBarbers();
 
-}
+    }
+
+    const handlePrintLeopardo = () => {
+
+    }
 
     return (
         <Container>
@@ -141,6 +144,7 @@ const handleLocationSearch = () => {
                     <LoadingIcon size="large" color="#FFF" />
                 }
 
+               
                 <ListArea>
                     {list.map((item, k) => (
                         <BarberItem key={k} data={item} />

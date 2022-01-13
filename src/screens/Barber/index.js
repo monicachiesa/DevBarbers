@@ -37,7 +37,7 @@ import {
   TestimonialItem,
   TestimonialName,
 } from "./styles";
-import { Text } from "react-native";
+
 import { useNavigation, useRoute } from "@react-navigation/native";
 import Api from "../../Api";
 import Swiper from "react-native-swiper";
